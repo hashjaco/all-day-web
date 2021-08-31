@@ -1,0 +1,377 @@
+@import "colors";
+@import "layouts";
+
+.active {
+  border: 2px solid $secondary-light
+}
+
+.app {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  height: 100%;
+
+}
+
+.app-navigator {
+  background-color: #F2F2F2;
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+  position: fixed;
+  right: -50%;
+  width: 50%;
+  z-index: 1;
+
+  ul {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+
+    li {
+      padding: 10px 2px;
+      a {
+        color: #4B4B4B;
+        text-decoration: none;
+        font-family: "Bungee", cursive;
+
+        &:focus {
+          border-bottom: 2px solid blue;
+        }
+      }
+
+
+    }
+  }
+
+  .app-nav-links-right {
+    justify-content: flex-end;
+  }
+}
+
+#logo {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 15px auto;
+
+  img {
+    width: 150px;
+  }
+}
+
+.view {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: column nowrap;
+  margin-top: 50px;
+}
+
+
+// ProductPreview - where the user's current product selection is displayed
+.feature-icon-container {
+  @include flex-even-row;
+  padding: 0 2px;
+  position: relative;
+  bottom: 35px;
+}
+
+.feature-icon {
+  margin: 3px 5px;
+  width: 30px;
+}
+
+.product-card {
+  @include flex-even-column;
+  background-color: $medium-light;
+  border-radius: 5px;
+  margin-right: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  img {
+    width: 80px;
+  }
+
+  p {
+    color: $dark;
+    font-family: "Raleway", -apple-system, sans-serif;
+    font-size: 8px;
+    font-weight: 400;
+    margin: 2px;
+    padding: 4px 8px;
+  }
+}
+
+.product-description {
+  width: 50%;
+  p {
+    font-size: 10px;
+  }
+}
+
+.product-selection-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 300px;
+}
+
+.product-selection-image {
+  width: 300px;
+}
+
+.product-title {
+  color: $secondary;
+  font-family: Bungee, cursive;
+}
+
+.view-box-container {
+  @include flex-even-column;
+  margin-bottom: 10px;
+}
+
+
+
+// BuyBox Components
+
+.add-button {
+  @include flex-even-row;
+  background-color: $secondary-light;
+  border-radius: 5px;
+  color: white;
+  font-family: "Bungee", cursive;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 8px 0;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.basic-text {
+  color: $medium;
+  font-size: 14px;
+  margin: 0;
+}
+
+.button-group {
+  width: 100%;
+}
+
+.divider {
+  color: white;
+  height: 100%;
+  width: 2px;
+}
+
+.fine-print {
+  color: $medium;
+  font-size: 10px;
+  margin: 0;
+}
+
+.payment {
+  color: $primary-light;
+  font-size: 22px;
+  margin: 0;
+}
+
+
+
+.payment-method-card {
+  @include flex-even-column();
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 3px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.save {
+  align-self: center;
+  color: $dark;
+  font-family: "Bungee", cursive;
+  font-size: 12px;
+  margin: 5px 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.strikethrough {
+  color: $medium;
+  margin: 0;
+  text-decoration: line-through;
+}
+
+// Product Customization Components
+
+.customization {
+  &-step-label {
+    color: $secondary;
+    font-family: "Bungee", cursive;
+    font-size: 16px;
+    margin: 1px;
+  }
+
+  &-step-description {
+    font-size: 12px;
+    margin: 1px;
+  }
+}
+
+
+@media only screen and (min-width: 320px) {
+
+}
+
+@media only screen and (min-width: 481px) {
+  #logo {
+    img {
+      width: 175px;
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .add-button {
+    width: 100%;
+  }
+  .app-navigator {
+    flex-flow: row nowrap;
+    height: 75px;
+    right: 0;
+    top: 0;
+    width: 100%;
+
+    ul {
+      flex-flow: row nowrap;
+      width: 100%;
+
+      li {
+        font-size: 14px;
+        margin-right: 3%;
+
+      }
+    }
+  }
+
+  .button-group {
+    width: 100%;
+  }
+
+  #logo {
+    position: absolute;
+    margin-top: 20px;
+    img {
+      width: 200px;
+    }
+
+  }
+
+
+  .feature-icon-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    padding: 0 2px;
+    width: 100%;
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: auto;
+    padding: 10px;
+  }
+
+
+
+  .product-selection-container {
+    width: 100%;
+  }
+
+  .product-selection-image {
+    width: 400px;
+  }
+
+  .view-box-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1025px){
+  #logo {
+    img {
+      display: flex;
+      width: 275px;
+    }
+  }
+
+  .feature-icon-container {
+    @include flex-even-row;
+    padding: 0 2px;
+    bottom: 120px;
+    right: 20px;
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: auto;
+    padding: 10px;
+  }
+
+  .product-selection-container {
+    width: 100%;
+  }
+
+  .product-selection-image {
+    width: 800px;
+  }
+
+  .view {
+    @include flex-between-row;
+  }
+
+  .view-box-container {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1201px){
+  .app-navigator {
+    ul {
+      li {
+        font-size: 16px;
+      }
+    }
+  }
+
+  #logo {
+    img {
+      display: flex;
+      width: 275px;
+    }
+  }
+}
+
+
+@keyframes toggle-mobile-navbar {
+
+}

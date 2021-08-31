@@ -1,0 +1,18 @@
+.drawer-toggle-button {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 25px;
+  justify-content: space-evenly;
+  width: 25px;
+
+  &:hover {
+    cursor: pointer;
+  }
+},
+
+.line {
+  background: #fff;
+  height: 2px;
+  width: 98%;
+}
