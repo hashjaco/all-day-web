@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./AllDayHeader.jsx";
-import "../styles/styles.scss";
+import "../styles/sass/styles.scss";
 
 const View = ({ children, header }) => {
   return (

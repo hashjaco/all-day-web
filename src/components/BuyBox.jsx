@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AppCard from "./AppCard.jsx";
-import "../styles/styles.scss";
+import "../styles/sass/styles.scss";
 
 const BuyBox = ({ product, setPaymentMethod }) => {
   const [selected, setSelected] = React.useState("full");

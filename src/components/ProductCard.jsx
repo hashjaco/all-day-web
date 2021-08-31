@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/styles.scss";
+import "../styles/sass/styles.scss";
 
 const ProductCard = ({ active, product = {}, handleClick }) => {
   return (

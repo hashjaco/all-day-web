@@ -1,6 +1,6 @@
 import React from "react";
 import { images } from "../config/images";
-import "../styles/styles.scss";
+import "../styles/sass/styles.scss";
 import IconGroup from "./IconGroup";
 
 const { featureBannerIcons } = images;

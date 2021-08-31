@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Products from "../views/Products";
-import "../styles/styles.scss";
+import "../styles/sass/styles.scss";
 
 const AppNavigator = () => {
   return (

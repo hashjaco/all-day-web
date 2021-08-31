@@ -1,0 +1,22 @@
+.evenly {
+  justify-content: space-evenly;
+}
+
+.start {
+  justify-content: flex-start;
+}
+
+.horizontal-list {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1;
+  padding: 3px;
+}
+
+.vertical-list {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin: 10px 0;
+  padding: 3px;
+}

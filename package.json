@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "node-sass": "5.0.0",
+    "concurrently": "^6.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.1",
@@ -14,10 +14,15 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"yarn sass-watch\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-img": "yarn sass && docker build -t all-day-web .",
+    "run-img": "docker run -it --rm -v ${PWD}:/app -v /app/node_modules -p 3001:3000 -e CHOKIDAR_USEPOLLING=true all-day-web",
+    "launch": "yarn build-img && yarn run-img",
+    "sass": "sass src/styles/sass:src/styles/css --no-source-map",
+    "sass-watch": "sass src/styles/sass:src/styles/css --watch --no-source-map"
   },
   "eslintConfig": {
     "extends": [
@@ -38,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "sass": "^1.38.2"
   }
 }

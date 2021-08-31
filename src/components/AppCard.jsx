@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/styles.scss";
+import "../styles/sass/styles.scss";
 
 const AppCard = ({ children, active, onClick }) => {
   return (

@@ -1,13 +1,17 @@
-FROM node:alpine
+FROM node:latest
 
-WORKDIR /app
+RUN mkdir -p /usr/src/app
 
-ENV PATH /app/node_modules/.bin:$PATH
+WORKDIR /usr/src/app
 
-COPY package.json ./
-COPY yarn.lock ./
+COPY package.json /usr/src/app/
+
 RUN yarn
 
-COPY . ./
+ADD src /usr/src/app/src
+
+ADD public /usr/src/app/public
+
+EXPOSE 3000
 
 CMD ["yarn", "start"]

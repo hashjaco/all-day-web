@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProductCard from "./ProductCard";
-import "../styles/styles.scss";
+import "../styles/sass/styles.scss";
 import { defaults } from "../config/colors";
 
 const CustomizationBox = ({ variations = {}, setFabric }) => {
