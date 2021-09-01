@@ -1,13 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import Products from "../../views/Products";
+import DrawerToggleButton from "./DrawerToggleButton";
 
 const SideDrawer = (props) => {
+  const numberToAccountingString = (number) => {
+    if (typeof number !== "number")
+      return console.error("Arguments passed is not of type 'number'");
+    return number < 0 ? `(${Math.abs(number)})` : number;
+  };
+
   return (
     <Router>
       <div className="app">
         <nav className="app-navigator">
-          <div className="app-nav-toggle-btn"></div>{" "}
+          <DrawerToggleButton />
           <ul>
             <li className="app-nav-link active">
               <Link to="/">THE SOFA</Link>

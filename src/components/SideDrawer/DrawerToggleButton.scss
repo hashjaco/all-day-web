@@ -1,18 +1,29 @@
+@import "../../styles/sass/styles";
+
 .drawer-toggle-button {
-  align-items: center;
-  display: flex;
-  flex-flow: column nowrap;
-  height: 25px;
-  justify-content: space-evenly;
-  width: 25px;
+  @include flex-even-column;
+  height: 30px;
+  width: 30px;
+  position: relative;
+  right: 40px;
+  top: 10px;
+  z-index: 2;
 
   &:hover {
     cursor: pointer;
   }
-},
 
-.line {
-  background: #fff;
-  height: 2px;
-  width: 98%;
+  .line {
+     background: $dark;
+     height: 3px;
+     width: 25px;
+   }
+}
+
+
+
+@media only screen and (min-width: 769px){
+  .drawer-toggle-button {
+    display: none;
+  }
 }

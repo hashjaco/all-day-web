@@ -21,7 +21,7 @@
   padding: 3px;
 }
 
-.active {
+.active-card {
   border: 2px solid #0D6EF0;
 }
 
@@ -33,6 +33,7 @@
 }
 
 .app-navigator {
+  animation: close-mobile-navbar ease-in 1s;
   background-color: #F2F2F2;
   display: flex;
   justify-content: center;
@@ -41,6 +42,10 @@
   right: -50%;
   width: 50%;
   z-index: 1;
+}
+.app-navigator.open {
+  animation: open-mobile-navbar ease-in 1s;
+  right: 0;
 }
 .app-navigator ul {
   display: flex;
@@ -58,13 +63,26 @@
   text-decoration: none;
   font-family: "Bungee", cursive;
 }
-.app-navigator ul li a:focus {
-  border-bottom: 2px solid blue;
-}
 .app-navigator .app-nav-links-right {
   justify-content: flex-end;
 }
 
+@keyframes open-mobile-navbar {
+  0% {
+    right: -50%;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes close-mobile-navbar {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -50%;
+  }
+}
 #logo {
   align-items: center;
   justify-content: center;
@@ -360,4 +378,3 @@
     width: 275px;
   }
 }
-@keyframes toggle-mobile-navbar {}

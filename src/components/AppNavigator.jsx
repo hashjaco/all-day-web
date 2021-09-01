@@ -2,14 +2,18 @@ import React from "react";
 import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Products from "../views/Products";
 import "../styles/sass/styles.scss";
+import DrawerToggleButton from "./SideDrawer/DrawerToggleButton";
 
 const AppNavigator = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
   return (
     <Router>
       <div className="app">
-        <nav className="app-navigator">
+        <nav className={isOpen ? "app-navigator open" : "app-navigator"}>
+          <DrawerToggleButton isOpen={isOpen} setIsOpen={setIsOpen} />
           <ul>
-            <li className="app-nav-link active">
+            <li className="app-nav-link active-link">
               <Link to="/">THE SOFA</Link>
             </li>
             <li className="app-nav-link">

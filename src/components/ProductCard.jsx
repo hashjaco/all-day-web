@@ -5,7 +5,7 @@ const ProductCard = ({ active, product = {}, handleClick }) => {
   return (
     <div
       onClick={handleClick}
-      className={active ? "product-card active" : "product-card"}
+      className={active ? "product-card active-card" : "product-card"}
     >
       <img src={product.url} alt={product.title} />
       <p>{product.title}</p>
